@@ -9,4 +9,5 @@ set(exe_sources
 
 set(headers
     include/project/tmp.hpp
+    include/GameOfLife
 )
