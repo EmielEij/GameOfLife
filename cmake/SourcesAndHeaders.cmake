@@ -1,5 +1,6 @@
 set(sources
     src/tmp.cpp
+    src/Matrix.cpp
 )
 
 set(exe_sources
@@ -9,5 +10,5 @@ set(exe_sources
 
 set(headers
     include/project/tmp.hpp
-    include/GameOfLife
+    include/GameOfLife/Matrix.h
 )
