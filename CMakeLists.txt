@@ -10,9 +10,16 @@ project(
   LANGUAGES CXX
 )
 
+
+
+
+
+
 #
 # Set project options
 #
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include(cmake/StandardSettings.cmake)
 include(cmake/Utils.cmake)
@@ -133,7 +140,9 @@ message(STATUS "Finished setting up include directories.")
 #
 # Model project dependencies 
 #
+find_package(SFML 2.5 COMPONENTS audio graphics window system REQUIRED)
 
+target_link_libraries(${PROJECT_NAME} sfml-audio sfml-graphics sfml-window sfml-system)
 # Identify and link with the specific "packages" the project uses
 #find_package(package_name package_version REQUIRED package_type [other_options])
 #target_link_libraries(
@@ -145,7 +154,6 @@ message(STATUS "Finished setting up include directories.")
 #    ${PROJECT_NAME}_PROJECT_OPTIONS        
 #    ${PROJECT_NAME}_PROJECT_WARNINGS        
 #)
-
 verbose_message("Successfully added all dependencies and linked against them.")
 
 #
